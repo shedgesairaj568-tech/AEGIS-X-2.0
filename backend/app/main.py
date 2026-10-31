@@ -18,6 +18,7 @@ from app.core.config import settings
 from app.core.logging import configure_logging, get_logger
 from app.middleware.error_handler import register_exception_handlers
 from app.middleware.request_logging import RequestLoggingMiddleware
+from app.db.seed import init_db_and_seed
 
 configure_logging()
 logger = get_logger(__name__)
@@ -32,6 +33,8 @@ async def lifespan(app: FastAPI):
         settings.DEBUG,
         settings.cors_origins_list,
     )
+    # Ensure tables exist and seed baseline accounts on startup
+    await init_db_and_seed()
     yield
     logger.info("%s shutting down", settings.APP_NAME)
 
@@ -50,13 +53,13 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
-    # --- CORS: allows the Lovable-built frontend (and local dev servers)
-    # to call this API from the browser. Origins come from env, never
-    # hardcoded, so staging/prod Lovable domains can be added without a
-    # code change. ---
+    # --- CORS: allows the frontend (and local dev servers)
+    # to call this API from the browser. Supports explicit env origins
+    # plus dynamic regex matching for Vercel and Render deployments. ---
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origins_list,
+        allow_origin_regex=r"https://.*\.vercel\.app|https://.*\.onrender\.com|http://localhost:.*|http://127\.0\.0\.1:.*",
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
