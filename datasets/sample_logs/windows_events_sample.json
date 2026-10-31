@@ -1,0 +1,59 @@
+[
+  {
+    "EventID": 4624,
+    "TimeCreated": "2026-10-31T10:20:00Z",
+    "Computer": "DC01.corp.internal",
+    "EventData": {
+      "TargetUserName": "Administrator",
+      "TargetDomainName": "CORP",
+      "LogonType": "10",
+      "IpAddress": "198.51.100.44",
+      "IpPort": "54120",
+      "TargetLogonId": "0x3e7"
+    }
+  },
+  {
+    "EventID": 4625,
+    "TimeCreated": "2026-10-31T10:21:15Z",
+    "Computer": "DC01.corp.internal",
+    "EventData": {
+      "TargetUserName": "finance_admin",
+      "TargetDomainName": "CORP",
+      "Status": "0xC000006D",
+      "SubStatus": "0xC000006A",
+      "IpAddress": "203.0.113.99",
+      "IpPort": "61002"
+    }
+  },
+  {
+    "EventID": 4672,
+    "TimeCreated": "2026-10-31T10:22:00Z",
+    "Computer": "DC01.corp.internal",
+    "EventData": {
+      "SubjectUserName": "Administrator",
+      "PrivilegeList": "SeSecurityPrivilege\nSeBackupPrivilege\nSeRestorePrivilege\nSeDebugPrivilege"
+    }
+  },
+  {
+    "EventID": 4688,
+    "TimeCreated": "2026-10-31T10:23:45Z",
+    "Computer": "WS04.corp.internal",
+    "EventData": {
+      "SubjectUserName": "jsmith",
+      "NewProcessName": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "CommandLine": "powershell.exe -nop -w hidden -enc JABzACAAPQAgAE4AZQB3AC0ATwBiAGoAZQBjAHQA...",
+      "ParentProcessName": "C:\\Windows\\System32\\cmd.exe"
+    }
+  },
+  {
+    "EventID": 7045,
+    "TimeCreated": "2026-10-31T10:25:10Z",
+    "Computer": "WS04.corp.internal",
+    "EventData": {
+      "ServiceName": "MaliciousBackdoorSvc",
+      "ImagePath": "C:\\Users\\Public\\svchost_fake.exe",
+      "ServiceType": "user mode service"
+    }
+  }
+]
+

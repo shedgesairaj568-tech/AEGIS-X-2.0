@@ -1,0 +1,32 @@
+[
+  {
+    "id": "POL-001",
+    "title": "Account Lockout and Failed Login Policy",
+    "category": "Authentication",
+    "content": "Any account with 5 or more failed login attempts within a 10-minute window must be automatically locked for 30 minutes. Repeated lockouts on the same account within a 24-hour period must be escalated to a Tier 2 analyst for manual review. Service accounts are exempt from automatic lockout but must trigger an immediate high-priority alert on any failed authentication, since service account credentials should never fail under normal operation."
+  },
+  {
+    "id": "POL-002",
+    "title": "DDoS Response Procedure",
+    "category": "Incident Response",
+    "content": "Upon detection of a suspected DDoS attack (sustained traffic exceeding 3x baseline for over 2 minutes from more than 20 distinct source IPs), the on-call analyst must immediately enable upstream traffic scrubbing and notify the network operations team. Any DDoS incident affecting customer-facing services for longer than 15 minutes must be reported to the incident commander and logged as a Severity 1 incident regardless of whether service was fully restored."
+  },
+  {
+    "id": "POL-003",
+    "title": "Port Scanning and Reconnaissance Response",
+    "category": "Detection",
+    "content": "A single source IP connecting to more than 15 distinct destination ports on the same host within 60 seconds should be treated as reconnaissance activity and logged as a low-to-medium severity alert. Source IPs exhibiting this pattern against more than one internal host within a 24-hour period must be automatically added to the network block list pending analyst review, since this pattern typically precedes a targeted follow-on attack."
+  },
+  {
+    "id": "POL-004",
+    "title": "Web Application Attack Escalation",
+    "category": "Incident Response",
+    "content": "Any detected SQL injection or cross-site scripting attempt against a production system handling customer data must be escalated to a Tier 2 analyst within 15 minutes, regardless of whether the attempt appears to have succeeded. All such attempts must be preserved with full request/response logs for at least 90 days to support forensic review and potential legal or regulatory reporting obligations."
+  },
+  {
+    "id": "POL-005",
+    "title": "Botnet and Command-and-Control Communication Policy",
+    "category": "Detection",
+    "content": "Any internal host observed making regular, low-volume outbound connections to the same external destination at consistent time intervals must be flagged for botnet/command-and-control investigation, even if the destination is not on a known threat intelligence blocklist. Hosts confirmed to be part of a botnet must be isolated from the network within 30 minutes of confirmation and undergo full forensic imaging before being returned to service."
+  }
+]

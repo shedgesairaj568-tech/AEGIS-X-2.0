@@ -1,0 +1,94 @@
+{
+  "trained_at": "2026-08-21T04:14:20.025263+00:00",
+  "feature_columns": [
+    "Destination Port",
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Backward Packets",
+    "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Min",
+    "Fwd Packet Length Mean",
+    "Bwd Packet Length Max",
+    "Bwd Packet Length Min",
+    "Bwd Packet Length Mean",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Flow IAT Mean",
+    "Flow IAT Std",
+    "Fwd IAT Mean",
+    "Bwd IAT Mean",
+    "Fwd PSH Flags",
+    "SYN Flag Count",
+    "ACK Flag Count",
+    "Average Packet Size",
+    "bytes_per_packet"
+  ],
+  "class_names": [
+    "botnet",
+    "brute_force",
+    "ddos",
+    "normal",
+    "other",
+    "port_scan",
+    "sql_injection",
+    "web_attack"
+  ],
+  "n_train_rows": 12120,
+  "n_test_rows": 3031,
+  "n_normal_rows_used_for_isolation_forest": 6600,
+  "isolation_forest_contamination": 0.1,
+  "test_accuracy": 0.978225008248103,
+  "test_macro_f1": 0.7261879606176422,
+  "per_class_metrics": {
+    "botnet": {
+      "precision": 0.5555555555555556,
+      "recall": 0.5,
+      "f1_score": 0.5263157894736842,
+      "support": 30.0
+    },
+    "brute_force": {
+      "precision": 0.9888888888888889,
+      "recall": 0.9888888888888889,
+      "f1_score": 0.9888888888888889,
+      "support": 180.0
+    },
+    "ddos": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 240.0
+    },
+    "normal": {
+      "precision": 0.9837642814191221,
+      "recall": 0.9915151515151515,
+      "f1_score": 0.9876245095079987,
+      "support": 1650.0
+    },
+    "other": {
+      "precision": 1.0,
+      "recall": 0.9881756756756757,
+      "f1_score": 0.994052676295667,
+      "support": 592.0
+    },
+    "port_scan": {
+      "precision": 0.9966777408637874,
+      "recall": 1.0,
+      "f1_score": 0.9983361064891847,
+      "support": 300.0
+    },
+    "sql_injection": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 3.0
+    },
+    "web_attack": {
+      "precision": 0.3235294117647059,
+      "recall": 0.3055555555555556,
+      "f1_score": 0.3142857142857143,
+      "support": 36.0
+    }
+  }
+}

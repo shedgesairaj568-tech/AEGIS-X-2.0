@@ -1,0 +1,12 @@
+{
+  "name": "aegis-x-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AEGIS-X Root Workspace Scripts",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "frontend": "npm --prefix frontend run dev",
+    "backend": "powershell -Command \"cd backend; .\\venv\\Scripts\\uvicorn.exe app.main:app --reload --host 0.0.0.0 --port 8000\""
+  }
+}

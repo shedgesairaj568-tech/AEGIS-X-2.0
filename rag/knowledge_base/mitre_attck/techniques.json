@@ -1,0 +1,50 @@
+[
+  {
+    "id": "T1110",
+    "name": "Brute Force",
+    "tactic": "Credential Access",
+    "description": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Without knowledge of the password for an account or set of accounts, an adversary may systematically guess the password using a repetitive or iterative mechanism. Brute forcing passwords can take place via interaction with a service that will check the validity of those credentials or offline against previously acquired credential data, such as password hashes.",
+    "mitigation": "Set account lockout policies after a certain number of failed login attempts. Use multi-factor authentication. Monitor for many repeated authentication attempts across multiple accounts. Refrain from re-using passwords across accounts.",
+    "detection_notes": "Failed login attempts in authentication logs, especially repeated attempts against the same account or from the same source in a short time window, are the primary detection signal."
+  },
+  {
+    "id": "T1498",
+    "name": "Network Denial of Service",
+    "tactic": "Impact",
+    "description": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users. Network DoS can be performed by exhausting the network bandwidth services rely on, often through flooding a target with a high volume of network traffic. Distributed DoS (DDoS) coordinates this flood from many compromised systems simultaneously, amplifying the impact and making the traffic source harder to block.",
+    "mitigation": "Deploy rate limiting and traffic filtering at network edges. Use content delivery networks and DDoS-protection services to absorb volumetric traffic. Maintain redundant network paths and bandwidth headroom.",
+    "detection_notes": "A sharp, sustained spike in inbound packet or byte rate from many distinct source IPs to a small number of destination ports is the characteristic signature."
+  },
+  {
+    "id": "T1584",
+    "name": "Compromise Infrastructure",
+    "tactic": "Resource Development",
+    "description": "Adversaries may compromise third-party infrastructure that can be used during targeting, including compromising numerous machines to form a botnet that can be used for follow-on activity such as Network Denial of Service or as proxy infrastructure to disguise the source of malicious traffic. Botnet-controlled hosts typically communicate with command-and-control infrastructure on a regular cadence.",
+    "mitigation": "Monitor for outbound connections to known command-and-control infrastructure. Implement egress filtering. Keep endpoint software patched to reduce the pool of exploitable hosts.",
+    "detection_notes": "Regular, low-volume beacon-like outbound connections to a small set of external hosts, especially from many internal machines to the same destination, suggest botnet command-and-control activity."
+  },
+  {
+    "id": "T1046",
+    "name": "Network Service Discovery",
+    "tactic": "Discovery",
+    "description": "Adversaries may attempt to get a listing of services running on remote hosts, including those that may be vulnerable to remote software exploitation, by scanning ranges of IP addresses and ports. This reconnaissance activity is frequently a precursor to a more targeted attack once open services and their versions have been identified.",
+    "mitigation": "Use network intrusion detection/prevention systems to identify and block scanning activity. Restrict unnecessary open ports at the firewall. Segment networks to limit what an internal scan can discover.",
+    "detection_notes": "Many connection attempts to a wide range of destination ports on one or few hosts, each with very short flow duration and minimal or no response payload, is the classic port-scan signature."
+  },
+  {
+    "id": "T1190",
+    "name": "Exploit Public-Facing Application",
+    "tactic": "Initial Access",
+    "description": "Adversaries may attempt to exploit a weakness in an Internet-facing host or system to gain initial access. Weaknesses can include software bugs, misconfigurations, or design flaws. Common vectors include SQL injection (manipulating a database query through unsanitized user input) and cross-site scripting, targeting web applications that process untrusted external input.",
+    "mitigation": "Use a web application firewall. Apply input validation and parameterized queries to prevent injection. Keep public-facing software patched. Conduct regular vulnerability scanning of externally exposed services.",
+    "detection_notes": "Requests containing SQL syntax fragments, unusual encoding, or script tags in URL parameters or form fields, especially in rapid repeated attempts against the same endpoint, indicate exploitation attempts."
+  },
+  {
+    "id": "T1499",
+    "name": "Endpoint Denial of Service",
+    "tactic": "Impact",
+    "description": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users without necessarily flooding network bandwidth. This can be accomplished by exhausting the system resources those services use, such as CPU, memory, or application-layer request handling capacity, often through a smaller volume of resource-intensive requests rather than a raw traffic flood.",
+    "mitigation": "Apply resource quotas and rate limiting at the application layer. Monitor server resource utilization for early warning signs. Use load balancers with health checks to fail over degraded instances.",
+    "detection_notes": "Elevated server resource consumption without a corresponding spike in raw network traffic volume, often from a smaller number of sources sending computationally expensive requests, distinguishes this from a network-layer DoS."
+  }
+]

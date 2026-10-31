@@ -1,0 +1,8 @@
+openvpn[4521]: 198.51.100.25:52310 TLS: Initial packet from [AF_INET]198.51.100.25:52310, sid=12345
+openvpn[4521]: alice/198.51.100.25:52310 MULTI_sva: pool returned IPv4=10.8.0.6, IPv6=(Not enabled)
+openvpn[4521]: 203.0.113.88:41235 TLS Auth Error: Auth Username/Password verification failed for peer
+openvpn[4521]: bob/198.51.100.40:53110 SIGTERM[soft,delayed-exit] received, client-instance exiting. Bytes: 450000/1820000
+wireguard: wg0: Handshake for peer 1 (198.51.100.30:51820) did not complete after 5 seconds, retrying...
+wireguard: wg0: Receiving handshake initiation from peer 2 (198.51.100.35:51820)
+random unparseable vpn line with no structure
+

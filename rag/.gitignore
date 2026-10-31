@@ -1,0 +1,4 @@
+# Vector store data is environment-specific (depends on which embedder
+# was used) and should never be committed or copied between machines —
+# see rag/README.md for why. Always regenerate via ingestion.
+vector_store/qdrant_data/

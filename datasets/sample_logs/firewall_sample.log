@@ -1,0 +1,10 @@
+%ASA-4-106023: Deny tcp src outside:198.51.100.15/44321 dst inside:10.0.0.5/80 by access-group "acl_in"
+%ASA-6-302013: Built inbound TCP connection 12345 for outside:203.0.113.10/54321 (203.0.113.10/54321) to inside:10.0.0.10/443 (10.0.0.10/443)
+%ASA-4-106023: Drop udp src outside:203.0.113.77/5353 dst inside:10.0.0.25/53 by access-group "acl_dns"
+iptables-DROP: IN=eth0 OUT= MAC=00:11:22:33:44:55 SRC=192.168.1.50 DST=10.0.0.1 LEN=60 PROTO=TCP SPT=49152 DPT=22
+iptables-ACCEPT: IN=eth0 OUT= MAC=00:11:22:33:44:55 SRC=192.168.1.60 DST=10.0.0.1 LEN=52 PROTO=TCP SPT=51234 DPT=443
+action=block proto=tcp src=198.51.100.99 dst=10.0.0.8 spt=61234 dpt=3389 bytes_out=120 bytes_in=0
+action=allow proto=udp src=10.0.0.15 dst=8.8.8.8 spt=53000 dpt=53 bytes_out=64 bytes_in=128
+MALFORMED FIREWALL LINE WITHOUT IP OR ACTION
+   
+

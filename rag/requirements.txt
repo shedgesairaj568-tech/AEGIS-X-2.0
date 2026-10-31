@@ -1,0 +1,15 @@
+# Vector database. qdrant-client supports a fully local/embedded mode
+# (QdrantClient(path=...) or QdrantClient(":memory:")) with NO separate
+# server required — same client code points at a real Qdrant server in
+# production by swapping the connection args for a url= instead.
+qdrant-client>=1.11.0
+
+# Embedding model. all-MiniLM-L6-v2 specifically: small (~80MB), fast on
+# CPU, and a well-established default for semantic search use cases —
+# no GPU required, which matters since this needs to run in ordinary
+# development/CI environments, not just on a GPU server.
+sentence-transformers>=3.1.0
+numpy>=1.26.4
+
+# testing
+pytest>=8.3.3

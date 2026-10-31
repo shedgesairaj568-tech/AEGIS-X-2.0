@@ -1,0 +1,7 @@
+requests>=2.32.3
+
+# NOTE: this module depends on everything in:
+#   ai_engine/requirements.txt (Module 6)
+#   rag/requirements.txt (Module 7)
+#   ai_engine/agents/requirements.txt (Module 8)
+# and needs a running backend (backend/requirements.txt, Module 2/3).

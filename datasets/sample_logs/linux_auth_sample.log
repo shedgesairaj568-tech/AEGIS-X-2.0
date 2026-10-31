@@ -1,0 +1,8 @@
+Oct 31 10:14:22 web-srv-01 sshd[14205]: Failed password for invalid user admin from 198.51.100.88 port 48123 ssh2
+Oct 31 10:14:25 web-srv-01 sshd[14208]: Failed password for root from 198.51.100.88 port 48124 ssh2
+Oct 31 10:15:00 web-srv-01 sshd[14210]: Accepted publickey for sarah from 192.168.1.10 port 52140 ssh2: RSA SHA256:abc123xyz
+Oct 31 10:16:01 web-srv-01 sudo:   analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Oct 31 10:16:15 web-srv-01 sudo:   attacker : user NOT in sudoers ; TTY=pts/2 ; PWD=/tmp ; USER=root ; COMMAND=/bin/bash
+Oct 31 10:17:10 web-srv-01 su[14300]: FAILED SU (to root) guest on pts/1
+Oct 31 10:18:00 web-srv-01 kernel: [12345.678] USB disconnect, device number 2
+

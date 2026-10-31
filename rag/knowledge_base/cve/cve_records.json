@@ -1,0 +1,47 @@
+[
+  {
+    "id": "CVE-2018-15473",
+    "title": "OpenSSH Username Enumeration",
+    "severity": "medium",
+    "cvss_score": 5.3,
+    "related_attack_type": "brute_force",
+    "summary": "Certain versions of OpenSSH respond differently to authentication requests depending on whether the supplied username exists on the system, allowing a remote attacker to enumerate valid usernames before attempting credential brute forcing. This significantly narrows the search space for a subsequent brute-force campaign against SSH.",
+    "remediation": "Upgrade OpenSSH to a patched version. Combine with rate limiting and fail2ban-style tooling to blunt enumeration and brute-force attempts regardless of patch status."
+  },
+  {
+    "id": "CVE-2021-44228",
+    "title": "Apache Log4j Remote Code Execution (Log4Shell)",
+    "severity": "critical",
+    "cvss_score": 10.0,
+    "related_attack_type": "web_attack",
+    "summary": "A flaw in the Apache Log4j logging library allows an attacker to achieve remote code execution by causing the application to log a specially crafted string, which triggers a lookup to an attacker-controlled server. Widely exploited at internet scale shortly after disclosure due to Log4j's ubiquity in Java web applications.",
+    "remediation": "Upgrade Log4j to a patched version immediately. Where immediate patching isn't possible, disable JNDI lookups via the documented mitigation flag and restrict outbound connections from affected servers."
+  },
+  {
+    "id": "CVE-2019-5736",
+    "title": "runc Container Escape",
+    "severity": "high",
+    "cvss_score": 8.6,
+    "related_attack_type": "botnet",
+    "summary": "A vulnerability in runc (used by Docker and other container runtimes) allows a malicious container to overwrite the host runc binary, enabling code execution on the host with root privileges. Compromised containers exploiting this class of vulnerability have historically been used to recruit hosts into botnets.",
+    "remediation": "Upgrade the container runtime to a patched version. Avoid running untrusted container images. Apply the principle of least privilege to container workloads."
+  },
+  {
+    "id": "CVE-2017-5638",
+    "title": "Apache Struts 2 Remote Code Execution",
+    "severity": "critical",
+    "cvss_score": 10.0,
+    "related_attack_type": "web_attack",
+    "summary": "A flaw in the Jakarta Multipart parser used by Apache Struts 2 allows a remote attacker to execute arbitrary commands via a crafted Content-Type HTTP header. Exploited in several major public data breaches shortly after disclosure.",
+    "remediation": "Upgrade Struts 2 to a patched version. Deploy a web application firewall with rules for this specific attack pattern as a compensating control."
+  },
+  {
+    "id": "CVE-2012-2122",
+    "title": "MySQL/MariaDB Authentication Bypass",
+    "severity": "high",
+    "cvss_score": 7.5,
+    "related_attack_type": "sql_injection",
+    "summary": "A flaw in the password comparison logic of certain MySQL and MariaDB versions can, under specific conditions, allow an attacker to authenticate successfully with an incorrect password on a small percentage of connection attempts, effectively allowing a probabilistic brute-force bypass of authentication.",
+    "remediation": "Upgrade MySQL/MariaDB to a patched version. Restrict database access to trusted hosts only, and monitor for repeated authentication attempts against database accounts."
+  }
+]

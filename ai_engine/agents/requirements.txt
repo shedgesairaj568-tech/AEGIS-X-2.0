@@ -1,0 +1,14 @@
+# Multi-agent orchestration
+langgraph>=0.2.28
+
+# LLM API calls (Anthropic) — falls back to deterministic templates if
+# no ANTHROPIC_API_KEY is configured; see ai_engine/agents/llm_client.py
+requests>=2.32.3
+
+# testing
+pytest>=8.3.3
+
+# NOTE: this module also depends on everything in ai_engine/requirements.txt
+# (Module 6 — trained models) and rag/requirements.txt (Module 7 — retrieval).
+# Install all three:
+#   pip install -r ai_engine/requirements.txt -r rag/requirements.txt -r ai_engine/agents/requirements.txt

@@ -1,0 +1,74 @@
+{
+  "1. XGBoost Alone": {
+    "accuracy": 0.9842,
+    "precision": 0.9854,
+    "recall": 0.9797,
+    "f1_score": 0.9826,
+    "roc_auc": 0.9986,
+    "pr_auc": 0.9986,
+    "fpr": 0.0121,
+    "brier_score": 0.0113,
+    "ece": 0.0083,
+    "latency_ms": 0.006
+  },
+  "2. Isolation Forest Alone": {
+    "accuracy": 0.9376,
+    "precision": 0.955,
+    "recall": 0.9059,
+    "f1_score": 0.9298,
+    "roc_auc": 0.981,
+    "pr_auc": 0.9802,
+    "fpr": 0.0358,
+    "brier_score": 0.0905,
+    "ece": 0.1895,
+    "latency_ms": 0.014
+  },
+  "3. Deep Autoencoder Alone": {
+    "accuracy": 0.7436,
+    "precision": 0.9763,
+    "recall": 0.4482,
+    "f1_score": 0.6144,
+    "roc_auc": 0.937,
+    "pr_auc": 0.9305,
+    "fpr": 0.0091,
+    "brier_score": 0.1623,
+    "ece": 0.1864,
+    "latency_ms": 0.001
+  },
+  "4. Equal-Weight Ensemble": {
+    "accuracy": 0.9805,
+    "precision": 0.9977,
+    "recall": 0.9594,
+    "f1_score": 0.9782,
+    "roc_auc": 0.9947,
+    "pr_auc": 0.9957,
+    "fpr": 0.0018,
+    "brier_score": 0.0541,
+    "ece": 0.1698,
+    "latency_ms": 0.021
+  },
+  "5. Legacy Weighted Ensemble": {
+    "accuracy": 0.9597,
+    "precision": 0.9976,
+    "recall": 0.9138,
+    "f1_score": 0.9539,
+    "roc_auc": 0.994,
+    "pr_auc": 0.9951,
+    "fpr": 0.0018,
+    "brier_score": 0.0674,
+    "ece": 0.1892,
+    "latency_ms": 0.021
+  },
+  "6. Proposed Calibrated Ensemble": {
+    "accuracy": 0.9852,
+    "precision": 0.9862,
+    "recall": 0.9812,
+    "f1_score": 0.9837,
+    "roc_auc": 0.9951,
+    "pr_auc": 0.996,
+    "fpr": 0.0115,
+    "brier_score": 0.0134,
+    "ece": 0.0363,
+    "latency_ms": 0.021
+  }
+}
